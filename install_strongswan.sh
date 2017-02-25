@@ -63,5 +63,5 @@ install_strongswan(){
 	VPN_PASSWORD=password
 	VPN_PSK=password
 }
-stat /usr/src/strongswan || install_strongswan
-/run.sh
+install_strongswan
+
