@@ -1,6 +1,6 @@
 #/bin/bash
 
-CWD=`pwd`
+app_dir=/apps/docker-strongswan
 
 install_strongswan(){
 	mkdir -p /conf
@@ -46,7 +46,7 @@ install_strongswan(){
 
 install_strongswan
 
-cd $CWD
+cd $app_dir
 # Strongswan Configuration
 cp ./ipsec.conf /etc/ipsec.conf
 cp ./strongswan.conf /etc/strongswan.conf
