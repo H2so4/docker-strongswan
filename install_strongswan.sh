@@ -42,7 +42,9 @@ install_strongswan(){
 		&& make install \
 		&& rm -rf "/usr/src/strongswan*"
 }
-stat /usr/src/strongswan || install_strongswan
+# stat /usr/src/strongswan || install_strongswan
+
+install_strongswan
 
 cd $CWD
 # Strongswan Configuration
