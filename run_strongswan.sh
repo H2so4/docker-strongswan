@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd /apps/docker-strongswan
 sysctl -w net.ipv4.conf.all.rp_filter=2
 
 iptables --table nat --append POSTROUTING --jump MASQUERADE
