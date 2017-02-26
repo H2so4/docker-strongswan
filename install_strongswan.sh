@@ -41,28 +41,24 @@ install_strongswan(){
 		&& make -j \
 		&& make install \
 		&& rm -rf "/usr/src/strongswan*"
-
-	cd $CWD
-	# Strongswan Configuration
-	cp ./ipsec.conf /etc/ipsec.conf
-	cp ./strongswan.conf /etc/strongswan.conf
-
-	# XL2TPD Configuration
-	cp ./xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
-	cp ./options.xl2tpd /etc/ppp/options.xl2tpd
-
-	cp ./run.sh /run.sh
-	cp ./vpn_adduser /usr/local/bin/vpn_adduser
-	cp ./vpn_deluser /usr/local/bin/vpn_deluser
-	cp ./vpn_setpsk /usr/local/bin/vpn_setpsk
-	cp ./vpn_unsetpsk /usr/local/bin/vpn_unsetpsk
-	cp ./vpn_apply /usr/local/bin/vpn_apply
-
-	
 }
 stat /usr/src/strongswan || install_strongswan
 
+cd $CWD
+# Strongswan Configuration
+cp ./ipsec.conf /etc/ipsec.conf
+cp ./strongswan.conf /etc/strongswan.conf
 
+# XL2TPD Configuration
+cp ./xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
+cp ./options.xl2tpd /etc/ppp/options.xl2tpd
+
+cp ./run.sh /run.sh
+cp ./vpn_adduser /usr/local/bin/vpn_adduser
+cp ./vpn_deluser /usr/local/bin/vpn_deluser
+cp ./vpn_setpsk /usr/local/bin/vpn_setpsk
+cp ./vpn_unsetpsk /usr/local/bin/vpn_unsetpsk
+cp ./vpn_apply /usr/local/bin/vpn_apply
 ################ Configure stuff
 # The password is later on replaced with a random string
 VPN_USER=user
